@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 myPreferenceEditor.putString("TextPref", input.getText().toString());
-                myPreferenceEditor.commit();
+                myPreferenceEditor.apply();
             }
         });
     }
