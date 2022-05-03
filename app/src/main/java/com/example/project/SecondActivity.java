@@ -19,15 +19,15 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        myPreferenceEditor = getPreferences(MODE_PRIVATE).edit();
+        myPreferenceEditor = getSharedPreferences("myPrefs", MODE_PRIVATE).edit();
 
         input = findViewById(R.id.input_view);
         setPref = findViewById(R.id.set_pref);
         setPref.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myPreferenceEditor.putString("MyAppPreferenceString", setPref.getText().toString());
-                myPreferenceEditor.apply();
+                myPreferenceEditor.putString("TextPref", input.getText().toString());
+                myPreferenceEditor.commit();
             }
         });
     }
