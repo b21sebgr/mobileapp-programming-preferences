@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        super.onResume();
         textView.setText(myPreferenceRef.getString("TextPref", "No preference found"));
     }
 }
